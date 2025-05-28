@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Metidieri Enterprises</title>
+    <link rel="stylesheet" href="cadastro.css"> <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="cadastro-page">
+        <div class="form-section">
+            <div class="form-content">
+                <h1>Crie sua conta</h1>
+                <p class="subtitle">Vamos começar preenchendo o formulário abaixo.</p>
+
+                <div class="input-field">
+                    <label for="emailAddress">Email</label>
+                    <input type="email" id="emailAddress" name="emailAddress" required>
+                </div>
+
+                <div class="input-field">
+                    <label for="phone">Telefone</label>
+                    <input type="text" id="phone" name="phone"> </div>
+
+                <div class="input-field">
+                    <label for="password">Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required>
+                        <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <label for="passwordConfirm">Confirmar Senha</label>
+                     <div class="password-wrapper">
+                        <input type="password" id="passwordConfirm" name="passwordConfirm" required>
+                        <i class="fas fa-eye password-toggle" id="togglePasswordConfirm"></i>
+                    </div>
+                </div>
+
+                <button type="button" class="cadastro-button" onclick="handleCadastro()">Criar Conta</button>
+
+                <p class="login-link">
+                    Já possui conta? <a href="#" onclick="navigateTo('login.html')">Clique aqui</a>
+                </p>
+            </div>
+        </div>
+        <div class="image-section">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

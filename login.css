@@ -1,0 +1,183 @@
+/* Estilos Globais */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FFFFFF; /* FlutterFlowTheme.of(context).secondaryBackground */
+    overflow: hidden; /* Para evitar barras de rolagem na página inteira */
+}
+
+.login-page {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Seção do Formulário (Esquerda) */
+.form-section {
+    flex: 8; /* Proporção como no Flutter */
+    background-color: #000000; /* Cor de fundo preta */
+    background-image: url('assets/images/LogoME2background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Para caso o conteúdo do formulário seja grande */
+}
+
+.form-content {
+    width: 100%;
+    max-width: 370px; /* Largura dos campos de texto */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha texto e campos à esquerda */
+}
+
+.form-content h1 {
+    font-family: 'Urbanist', sans-serif;
+    /* fontWeight e fontStyle de displaySmall - assumindo normal/bold */
+    font-weight: 700;
+    font-size: 2.25rem; /* Aproximação de displaySmall */
+    color: #FFFFFF; /* FlutterFlowTheme.of(context).secondaryBackground (para contraste) */
+    margin-bottom: 12px;
+    letter-spacing: 0.0;
+}
+
+.form-content .subtitle {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* fontWeight e fontStyle de labelMedium */
+    font-size: 0.9rem;
+    color: #FFFFFF; /* FlutterFlowTheme.of(context).secondaryBackground (para contraste) */
+    margin-bottom: 24px;
+    letter-spacing: 0.0;
+}
+
+.input-field {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.input-field label {
+    display: block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.875rem; /* labelMedium */
+    color: #F1F4F8; /* Cor do label, um cinza claro para contraste com o fundo escuro */
+    margin-bottom: 4px;
+    letter-spacing: 0.0;
+}
+
+.input-field input[type="email"],
+.input-field input[type="password"],
+.input-field input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #F1F4F8; /* primaryBackground como borda */
+    background-color: #F1F4F8; /* primaryBackground como fill */
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem; /* bodyMedium */
+    color: #14181B; /* Cor do texto dentro do input */
+    letter-spacing: 0.0;
+}
+
+.input-field input:focus {
+    border-color: #000AFE; /* primary color */
+    outline: none;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 40px; /* Espaço para o ícone */
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #57636C; /* secondaryText */
+}
+
+.login-button {
+    width: 100%;
+    height: 44px;
+    padding: 0;
+    background-color: #000AFE; /* Cor específica do botão */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem; /* titleSmall */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    letter-spacing: 0.0;
+    margin-top: 10px; /* Espaçamento antes do botão */
+}
+
+.login-button:hover {
+    background-color: #0007D8; /* Um pouco mais escuro */
+}
+
+.form-content .extra-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+}
+.form-content .extra-link a {
+    color: #5FABFB; /* Cor de link destacada */
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+/* Seção da Imagem (Direita) */
+.image-section {
+    flex: 6; /* Proporção como no Flutter */
+    background-image: url('assets/images/ME_pag_login.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px; /* Arredondamento da imagem */
+    margin: 16px; /* Padding em volta da imagem */
+    box-sizing: border-box;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .login-page {
+        flex-direction: column;
+    }
+    .form-section, .image-section {
+        flex: none; /* Remove a proporção flex */
+        width: 100%;
+    }
+    .form-section {
+        height: auto; /* Altura automática para o formulário */
+        min-height: 60vh; /* Altura mínima para visualização */
+        padding: 20px;
+    }
+    .image-section {
+        height: 40vh; /* Altura para a imagem em telas menores */
+        margin: 0; /* Remove margens para ocupar a largura total */
+        border-radius: 0; /* Remove bordas arredondadas em tela cheia */
+    }
+    .form-content h1 {
+        font-size: 1.8rem;
+    }
+    .form-content .subtitle {
+        font-size: 0.8rem;
+    }
+}

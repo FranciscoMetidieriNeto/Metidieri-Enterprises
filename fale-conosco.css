@@ -1,0 +1,273 @@
+/* Estilos Globais e Reset Simples */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f1f4f8;
+    color: #14181B;
+}
+
+.scaffold {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* ou min-height: 100vh; */
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+/* Cabeçalho (AppBar) */
+.app-bar {
+    width: 100%;
+    height: 15vh;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.logo-image {
+    height: 80%;
+    max-width: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.ff-button { /* Estilo base do seu botão */
+    height: 40px;
+    padding: 0 16px;
+    background-color: #2C70FB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ff-button:hover {
+    background-color: #1A5ACB;
+}
+.ff-button.active {
+    background-color: #1A5ACB;
+    font-weight: bold;
+}
+
+.profile-icon-container {
+    padding: 8px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Conteúdo Principal Específico de Fale Conosco */
+.main-content { /* Mantém o footer no lugar certo */
+    flex-grow: 1;
+    width: 100%;
+    /* height: 70vh; -- Comentado como no seu original, flex-grow cuida da altura */
+    background-color: #000000; /* Cor de fundo geral para o main-content */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o .form-container-material horizontalmente */
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.scrollable-content { /* Se você aplicar esta classe ao main-content e quiser um scroll interno */
+    overflow-y: auto;
+    height: 70vh; /* Defina a altura desejada para a área de scroll */
+}
+
+.fale-conosco-content-bg { /* Aplicado ao main-content na página Fale Conosco */
+    background-image: url('assets/images/LogoME2background.png');
+    justify-content: center; /* Centraliza o .form-container-material verticalmente se o main-content tiver altura definida e for maior que o form */
+}
+
+.form-container-material {
+    width: 50%;
+    max-width: 600px;
+    /* min-height: 370px;  Removido min-height fixo para acomodar mais campos naturalmente */
+    background-color: rgba(255, 255, 255, 0.582);
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    padding: 20px; /* Padding interno geral do container do formulário */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o .form-handle */
+}
+
+.form-handle {
+    width: 50px;
+    height: 4px;
+    background-color: #E0E3E7;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.form-container-material h3 {
+    font-size: 24px;
+    color: #14181B;
+    font-weight: normal;
+    margin-bottom: 16px;
+    align-self: flex-start; /* Alinha o título à esquerda */
+}
+
+.form-container-material form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaçamento entre os campos do formulário */
+}
+
+/* --- AJUSTES E NOVOS ESTILOS PARA CAMPOS DO FORMULÁRIO --- */
+.form-container-material .form-field-group { /* Novo: Agrupador opcional para label + input */
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Espaço entre label e input */
+}
+
+.form-container-material label { /* Novo: Estilo para os rótulos dos campos */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px; /* Tamanho da fonte para o rótulo */
+    color: #000000;  /* Cor mais suave para o rótulo */
+    font-weight: 500; /* Peso da fonte para o rótulo */
+    /* margin-bottom: 6px; Removido, usando gap no form-field-group */
+}
+
+.form-container-material input[type="email"],
+.form-container-material input[type="tel"],
+.form-container-material textarea {
+    width: 100%; /* Largura total */
+    padding: 15px; /* Padding interno dos campos. Ajustado de 20px para melhor proporção em inputs */
+    border: 2px solid #E0E3E7; /* Borda padrão */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px; /* Tamanho da fonte dentro do campo */
+    color: #14181B; /* Cor do texto digitado */
+    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
+    background-color: #FFFFFF; /* Fundo branco para os campos */
+}
+
+.form-container-material textarea {
+    resize: vertical; /* Permite redimensionamento vertical do textarea */
+    min-height: 120px; /* Altura mínima para o textarea */
+}
+
+.form-container-material input[type="email"]:focus,
+.form-container-material input[type="tel"]:focus,
+.form-container-material textarea:focus {
+    border-color: #4B39EF; /* Cor da borda ao focar, como no seu original */
+    outline: none; /* Remove o outline padrão do navegador */
+    box-shadow: 0 0 0 2px rgba(75, 57, 239, 0.2); /* Adiciona um brilho suave no foco */
+}
+
+.form-container-material input::placeholder,
+.form-container-material textarea::placeholder {
+    color: #343536; /* Cor para o texto do placeholder */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+/* --- FIM DOS AJUSTES --- */
+
+.form-submit-button { /* Classe específica para o botão de submit do formulário */
+    width: 270px; /* Largura específica */
+    height: 50px !important; /* Altura específica, usando !important como no seu original */
+    align-self: center; /* Centraliza o botão */
+    margin-top: 24px; /* Espaçamento acima do botão */
+    font-size: 22px !important; /* Tamanho da fonte, usando !important como no seu original */
+    /* Herda outros estilos de .ff-button (cor, borda, etc.) */
+}
+
+
+/* Ajustes para telas menores */
+@media (max-width: 900px) {
+    .app-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .nav-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px 0;
+    }
+    .ff-button {
+        font-size: 0.9em;
+        padding: 0 10px;
+        height: 35px;
+    }
+    .profile-icon-container { width: 80px; height: 80px; }
+    .profile-icon { width: 60px; height: 60px; }
+
+    .scrollable-content { height: auto; max-height: 70vh; } /* Ajuste para scroll em mobile */
+
+    /* Ajustes do formulário para mobile */
+    .form-container-material {
+        width: 90%; /* Formulário ocupa mais largura em telas pequenas */
+        padding: 15px;
+    }
+    .form-container-material h3 {
+        font-size: 20px; /* Título do formulário menor */
+    }
+    .form-container-material input[type="email"],
+    .form-container-material input[type="tel"],
+    .form-container-material textarea {
+        padding: 12px; /* Padding menor nos campos em mobile */
+        font-size: 13px;
+    }
+    .form-submit-button {
+        width: 100%; /* Botão ocupa largura total em mobile */
+        font-size: 18px !important;
+        height: 45px !important;
+    }
+
+    /* Ajustes do rodapé para mobile */
+    .footer-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 15px;
+    }
+    .logo-image-footer {
+        height: 60px;
+    }
+    .footer-title {
+        font-size: 18px;
+    }
+    .social-icons span, .footer-contacts p, .footer-link { /* Assumindo que .social-icons i foi substituído ou é um span */
+        font-size: 14px;
+    }
+    .social-icons {
+        gap: 10px;
+    }
+    .social-icons span { /* Ícones sociais menores em mobile */
+        font-size: 20px;
+    }
+}

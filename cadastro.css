@@ -1,0 +1,189 @@
+/* Estilos Globais */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FFFFFF; /* FlutterFlowTheme.of(context).secondaryBackground */
+    overflow: hidden;
+}
+
+.cadastro-page { /* Renomeado de login-page para clareza */
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Seção do Formulário (Esquerda) */
+.form-section {
+    flex: 8;
+    background-color: #000000;
+    background-image: url('assets/images/LogoME2background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-content h1 {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+    letter-spacing: 0.0;
+}
+
+.form-content .subtitle {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    letter-spacing: 0.0;
+}
+
+.input-field {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.input-field label {
+    display: block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #F1F4F8;
+    margin-bottom: 4px;
+    letter-spacing: 0.0;
+}
+
+.input-field input[type="email"],
+.input-field input[type="password"],
+.input-field input[type="text"] { /* Incluído type="text" para o telefone */
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #F1F4F8;
+    background-color: #F1F4F8;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    color: #14181B;
+    letter-spacing: 0.0;
+}
+
+.input-field input:focus {
+    border-color: #000AFE;
+    outline: none;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 40px;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #57636C;
+}
+
+.cadastro-button { /* Renomeado de login-button */
+    width: 100%;
+    height: 44px;
+    padding: 0;
+    background-color: #000AFE;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    letter-spacing: 0.0;
+    margin-top: 10px;
+}
+
+.cadastro-button:hover {
+    background-color: #0007D8;
+}
+
+.form-content .login-link { /* Renomeado de extra-link */
+    margin-top: 24px; /* Aumentado padding do Flutter */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.125rem; /* 18px */
+    color: #FFFFFF; /* secondaryBackground */
+    text-align: left; /* No Flutter, não estava centralizado */
+    width: 100%;
+}
+.form-content .login-link a {
+    color: #5FABFB;
+    text-decoration: none; /* Removido sublinhado padrão */
+    font-weight: bold;
+}
+.form-content .login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Seção da Imagem (Direita) */
+.image-section {
+    flex: 6;
+    background-image: url('assets/images/ME_pag_login.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    margin: 16px;
+    box-sizing: border-box;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cadastro-page {
+        flex-direction: column;
+    }
+    .form-section, .image-section {
+        flex: none;
+        width: 100%;
+    }
+    .form-section {
+        height: auto;
+        min-height: 70vh; /* Mais altura para mais campos */
+        padding: 20px;
+    }
+    .image-section {
+        height: 30vh;
+        margin: 0;
+        border-radius: 0;
+    }
+    .form-content h1 {
+        font-size: 1.8rem;
+    }
+    .form-content .subtitle {
+        font-size: 0.8rem;
+    }
+    .form-content .login-link {
+        font-size: 1rem;
+        text-align: center; /* Centralizar em mobile pode ser melhor */
+    }
+}

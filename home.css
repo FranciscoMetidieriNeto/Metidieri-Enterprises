@@ -1,0 +1,391 @@
+/* Estilos Globais e Reset Simples */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f1f4f8; /* Cor de fundo primária padrão */
+    color: #14181B; /* Cor de texto padrão */
+}
+
+.scaffold {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Cor de fundo secundária */
+}
+
+/* Cabeçalho (AppBar) */
+.app-bar {
+    width: 100%;
+    height: 15vh;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex-shrink: 0; /* Impede que o header encolha */
+}
+
+.logo-image {
+    height: 80%;
+    max-width: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.ff-button {
+    height: 40px;
+    padding: 0 16px;
+    background-color: #2C70FB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ff-button:hover {
+    background-color: #1A5ACB;
+}
+.ff-button.active {
+    background-color: #1A5ACB;
+    font-weight: bold;
+}
+
+.profile-icon-container {
+    padding: 8px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Conteúdo Principal Específico da Home */
+.home-page-bg-main { /* Fundo da página inteira para home */
+    background-image: url('assets/images/LogoME2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-content {
+    flex-grow: 1;
+    width: 100%;
+    /* height: 70vh; */ /* Removido para permitir que flex-grow funcione melhor com scrollable-content */
+    background-color: #000000;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.scrollable-content {
+    overflow-y: auto;
+    height: 70vh; /* Definir altura para o scroll funcionar corretamente */
+}
+
+.home-content-bg {
+    background-image: url('assets/images/LogoME2background.png');
+}
+
+.info-boxes-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.info-box {
+    width: 35%;
+    min-width: 280px;
+    height: auto;
+    min-height: 250px;
+    background-color: rgba(0, 0, 0, 0.43);
+    border-radius: 8px;
+    box-shadow: 10px 20px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    padding: 16px;
+    box-sizing: border-box;
+    color: white;
+    margin-top: 12px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-box h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.info-box p {
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: start;
+}
+
+/* Estilos para o Carrossel de Projetos */
+.carroussel-projetos {
+    width: 90%;
+    max-width: 1000px; /* Largura máxima do carrossel */
+    margin: 40px auto; /* Centraliza e adiciona margem */
+    padding: 20px;
+    background-color: #f9f9f9; /* Cor de fundo para a seção do carrossel */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o título h2 */
+}
+
+.carroussel-projetos h2 {
+    font-family: 'Urbanist', sans-serif; /* Usando uma fonte similar à da sua app */
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.carroussel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carroussel-viewport {
+    width: 100%; /* Ajuste para mostrar mais de um card se desejar, ex: 80% */
+    overflow: hidden; /* Essencial para o efeito de carrossel */
+}
+
+.carroussel-track {
+    display: flex; /* Organiza os cards em linha */
+    transition: transform 0.5s ease-in-out; /* Animação suave */
+    /* A largura será definida pelo JavaScript com base no número de cards */
+}
+
+.projeto-card {
+    min-width: 280px; /* Largura mínima de cada card */
+    max-width: 320px; /* Largura máxima de cada card */
+    flex: 0 0 auto;   /* Impede que os cards encolham ou estiquem */
+    margin: 0 10px;   /* Espaçamento entre os cards */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-imagem {
+    width: 100%;
+    height: 180px; /* Altura fixa para a imagem pequena */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+.projeto-info {
+    padding: 15px;
+    text-align: left;
+    flex-grow: 1; /* Faz esta div ocupar o espaço restante no card */
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-titulo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.projeto-descricao {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+    flex-grow: 1; /* Faz a descrição ocupar espaço antes do link */
+    margin-bottom: 12px;
+}
+
+.projeto-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff; /* Cor de exemplo para o link */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto; /* Empurra o link para o final do .projeto-info */
+    transition: background-color 0.3s ease;
+}
+
+.projeto-link:hover {
+    background-color: #0056b3;
+}
+
+.carroussel-botao {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute; /* Posição absoluta em relação ao .carroussel-container */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.carroussel-botao:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+}
+
+.carroussel-botao.prev {
+    left: -20px; /* Posição do botão "anterior" */
+}
+
+.carroussel-botao.next {
+    right: -20px; /* Posição do botão "próximo" */
+}
+
+/* Para telas menores, os botões podem ficar mais próximos */
+@media (max-width: 768px) {
+    .carroussel-projetos {
+        width: 95%;
+        padding: 15px;
+    }
+    .carroussel-projetos h2 {
+        font-size: 1.5rem;
+    }
+    .carroussel-botao.prev {
+        left: 5px;
+    }
+    .carroussel-botao.next {
+        right: 5px;
+    }
+    .projeto-card {
+        min-width: 250px; /* Ajusta a largura dos cards para telas menores */
+    }
+}
+
+/* Rodapé (FooterBar) */
+.footer-bar {
+    width: 100%;
+    height: 15vh;
+    background-color: #1250CE;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: white;
+    flex-shrink: 0; /* Impede que o footer encolha */
+}
+
+.logo-image-footer {
+    height: 80%;
+    max-width: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.social-contacts, .footer-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+}
+.footer-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.social-icons span, .footer-contacts p {
+    font-size: 16px;
+    margin: 2px 0;
+}
+.social-icons {
+    display: flex;
+    gap: 50px;
+}
+.social-icons i {
+    font-size: 40px;
+}
+.footer-link {
+    color: white;
+    text-decoration: underline;
+    font-size: 16px;
+    cursor: pointer;
+}
+.footer-link:hover {
+    color: #f0f0f0;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 900px) {
+    .app-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .nav-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px 0;
+    }
+    .ff-button {
+        font-size: 0.9em;
+        padding: 0 10px;
+        height: 35px;
+    }
+    .profile-icon-container { width: 80px; height: 80px; }
+    .profile-icon { width: 60px; height: 60px; }
+
+    .scrollable-content { height: auto; max-height: 70vh; } /* Ajuste para scroll em mobile */
+
+    .info-boxes-container { flex-direction: column; align-items: center; }
+    .info-box { width: 80%; margin-bottom: 20px; }
+    .info-box p { font-size: 18px; }
+    .info-box h2 { font-size: 28px; }
+
+    .footer-bar { flex-direction: column; height: auto; padding: 15px; gap: 15px; }
+    .logo-image-footer { height: 60px; }
+    .footer-title { font-size: 18px; }
+    .social-icons span, .footer-contacts p, .footer-link { font-size: 14px; }
+}

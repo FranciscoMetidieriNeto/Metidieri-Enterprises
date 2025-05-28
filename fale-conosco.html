@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco - Metidieri Enterprises</title>
+    <link rel="stylesheet" href="fale-conosco.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="scaffold">
+        <div class="page-container home-page-bg-main">
+
+            <div id="navbar-placeholder"></div>
+
+            <main class="main-content fale-conosco-content-bg scrollable-content">
+                <div class="form-container-material">
+                    <div class="form-handle"></div>
+                    <h3>Deixe sua Mensagem</h3>
+                    <form id="contactForm">
+                        <div>
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="Seu e-mail aqui..." required>
+                        </div>
+
+                        <div>
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone aqui..." required>
+                        </div>
+
+                        <div>
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui..." rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="ff-button">Enviar</button>
+                    </form>
+                </div>
+            </main>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
