@@ -105,8 +105,8 @@ body, html {
     height: 70vh; /* Defina a altura desejada para a área de scroll */
 }
 
-.fale-conosco-content-bg { /* Aplicado ao main-content na página Fale Conosco */
-    background-image: url('assets/images/LogoME2background.png');
+.fale-conosco-content-bg {
+    background-image: url('../assets/images/LogoME2background.png'); /* CAMINHO CORRIGIDO */
     justify-content: center; /* Centraliza o .form-container-material verticalmente se o main-content tiver altura definida e for maior que o form */
 }
 

@@ -106,7 +106,7 @@ body, html {
 }
 
 .projetos-content-bg {
-    background-image: url('assets/images/LogoME2background.png');
+    background-image: url('../assets/images/LogoME2background.png');
     padding-top: 20px;
 }
 .project-banner-container {
